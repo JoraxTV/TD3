@@ -19,7 +19,7 @@ public class App extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
 		Scene scene = new Scene(root, 800, 600);
 
-		stage.setTitle("Simulateur de foule");
+		stage.setTitle("JAVA.Simulateur de foule");
 		stage.setScene(scene);
 		stage.show();
 	}

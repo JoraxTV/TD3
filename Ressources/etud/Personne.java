@@ -53,4 +53,12 @@ public class Personne {
 		// Ajouter un délpacement
 		getMaForme().setTranslateX(x);
 	}
+
+	public void couleurNormal() {
+
+	}
+
+	public void couleurSelection() {
+
+	}
 }

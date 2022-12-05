@@ -51,7 +51,7 @@ public class Simulateur implements Initializable {
 		++nbElements;
 		Personne p = new Personne("P" + nbElements, x, y, COLS[nbElements % COLS.length]);
 		contenu.getChildren().add(p.getMaForme());
-		p.setOnMouseClicked(this::mouseClicked);
+		//p.setOnMouseClicked(this::mouseClicked);
 	}
 
 	/**
@@ -97,6 +97,8 @@ public class Simulateur implements Initializable {
 	 * @see MenuItem#getOnAction()
 	 */
 	public void deplacer(ActionEvent event) {
+		for (Entite p : selection) {
+			p.deplacer();
 		}
 	}
 
@@ -126,9 +128,18 @@ public class Simulateur implements Initializable {
 	public void aPropos(ActionEvent event) {
 		Alert a = new Alert(Alert.AlertType.INFORMATION);
 		a.setTitle("A Propos");
-		a.setHeaderText("Simulateur de personnes");
+		a.setHeaderText("JAVA.Simulateur de personnes");
 		a.setContentText("M3105 - Patrons de conception\nPatron Composite");
 		a.getButtonTypes().setAll(ButtonType.CLOSE);
 		a.showAndWait();
+	}
+
+	public void onClick(Personne personne){
+		if (selection.contains(personne)) {
+			selection.remove(personne);
+			personne.couleurNormal();
+		} else {
+			personne.couleurSelection();
+		}
 	}
 }
