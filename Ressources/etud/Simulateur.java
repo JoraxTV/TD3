@@ -135,11 +135,6 @@ public class Simulateur implements Initializable {
 	}
 
 	public void onClick(Personne personne){
-		if (selection.contains(personne)) {
-			selection.remove(personne);
-			personne.couleurNormal();
-		} else {
-			personne.couleurSelection();
-		}
+
 	}
 }
